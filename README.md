@@ -1,2 +1,2 @@
 # gamecom
-https://mokeeffm.github.io/gamecon/
+https://mokeeffm.github.io/gamecom/
