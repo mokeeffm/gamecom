@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="assets/css/style.min.css">
   </head>
   <body>
-    <div class="preloader align-items-center justify-content-center">
+    <div class="preloader">
+	  <div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div></div>
+	  <div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div></div>
+	  <div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div></div>
+	  <div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div></div>
       <span class="loader"></span>
     </div>
     <button class="scrollToTop d-flex d-center" aria-label="scroll Bar Button"><span>Вверх <i class="material-symbols-outlined mat-icon fs-five"> arrow_right_alt </i></span></button>
@@ -19,18 +23,20 @@
     </div>
     <header class="header-section header-menu">
       <nav class="navbar w-100 flex-nowrap px-2 py-6 ps-2 ps-xl-10 ps-xxl-10 navbar-expand-xl">
-        <div class="sidebar-close mobile-menu">
+        <div class="sidebar-close mobile-menu d-flex d-xl-none">
           <button class="d-center d-grid d-xl-none">
           <i class="material-symbols-outlined mat-icon fs-four">menu_open</i>
           <span class="fs-six">МЕНЮ</span>
           </button>
         </div>
-        <a href="index.html" class="navbar-brand ms-4 ms-xxl-15 d-flex align-items-center gap-2">
-        <img src="assets/images/fav.png" class="logo" alt="logo">
-        <img src="assets/images/logo-text.png" class="logo-text d-xxl-block d-none" alt="logo-text">
-        </a>
-        <div class="collapse navbar-collapse d-flex gap-10 w-100 justify-content-end px-8 pe-2" id="navbar-content">
-          <ul class="navbar-nav d-xl-flex d-none gap-3 py-4 py-lg-0 m-auto pe-20 align-self-center">
+        <div class="navbar-brand ms-4 ms-xxl-15 align-items-center gap-2 collapse navbar-collapse gap-10 justify-content-end px-8 pe-2 d-flex" style="flex:0 0 auto;">
+			<a href="index.html" class="">
+			  <img src="assets/images/fav.png" class="logo" alt="logo">
+			  <img src="assets/images/logo-text.png" class="logo-text" alt="logo-text">
+			</a>
+        </div>
+        <div class="collapse navbar-collapse d-xl-flex d-none gap-10 justify-content-end px-8 pe-2" id="navbar-content" style="flex:1 1 auto;">
+          <ul class="navbar-nav gap-3 py-4 py-lg-0 m-auto pe-20 align-self-center">
             <li>
               <a class="dropdown-nav" href="javascript:void(0)">Home</a>
             </li>
@@ -53,6 +59,8 @@
               <a class="dropdown-nav" href="javascript:void(0)">Contact</a>
             </li>
           </ul>
+        </div>
+        <div class="collapse d-flex gap-10 justify-content-end px-8 pe-2">
           <div class="right-area position-relative d-flex gap-3 gap-xxl-6 align-items-center">
             <div class="single-item">
               <div class="cmn-head">
@@ -67,13 +75,7 @@
     </header>
     <div class="sidebar-wrapper">
       <div class="position-relative">
-        <div class="side-menubar py-6 d-flex flex-column justify-content-between align-items-center">
-          <div class="sidebar-close d-none d-xl-block">
-            <button class="d-center d-grid">
-            <i class="material-symbols-outlined mat-icon fs-three"> menu_open </i>
-            <span>MENU</span>
-            </button>
-          </div>
+        <div class="side-menubar p-3 d-flex flex-column justify-content-end align-items-center">
           <ul class="d-grid gap-4 social-area">
             <li>
               <a href="https://www.facebook.com" aria-label="Facebook" class="d-center">
@@ -125,57 +127,13 @@
               </ul>
             </div>
           </div>
-          <div class="footer-items w-100 bottom-0">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="single-item p-5 py-xxl-10 px-xxl-8">
-                  <h4 class="mb-6">Местоположение</h4>
-                  <div class="d-flex gap-3 align-items-center">
-                    <div class="icon-box d-center">
-                      <i class="material-symbols-outlined mat-icon fs-fure">location_on</i>
-                    </div>
-                    <div class="right-item w-75">
-                      <h5>Россия</h5>
-                      <span>Марий Эл</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="single-item p-5 py-xxl-10 px-xxl-8">
-                  <h4 class="mb-6">Емайл</h4>
-                  <div class="d-flex gap-3 align-items-center">
-                    <div class="icon-box d-center">
-                      <i class="material-symbols-outlined mat-icon fs-fure">mail</i>
-                    </div>
-                    <div class="right-item d-grid">
-                      <span><a href="mailto:info@savordevs.com">info@savordevs.com</a></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="single-item p-5 py-xxl-10 px-xxl-8">
-                  <h4 class="mb-6">Телефон</h4>
-                  <div class="d-flex gap-3 align-items-center">
-                    <div class="icon-box d-center">
-                      <i class="material-symbols-outlined mat-icon fs-fure">call</i>
-                    </div>
-                    <div class="right-item d-grid">
-                      <span>(302) 555-0107</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
     <section class="banner-section index-one overflow-hidden">
       <div class="shape-area">
         <img src="assets/images/abs-items/planet.png" class="shape-1" alt="icon">
-        <img src="assets/images/abs-items/console-1.png" class="shape-2" alt="icon">
+        <!-- <img src="assets/images/abs-items/console-1.png" class="shape-2" alt="icon"> -->
         <img src="assets/images/abs-items/console-2.png" class="shape-3" alt="icon">
       </div>
       <div class="ellipse-area ellipse-one position-absolute">
@@ -975,7 +933,7 @@
             </li>
           </ul>
         </div>
-        <div class="row justify-content-center overflow-hidden">
+        <div class="row justify-content-center overflow-hidden gap-col">
           <div class="col-lg-6 position-relative p-0 m-0">
             <div class="box-items d-inline-flex flex-wrap position-absolute">
               <div class="single-item"></div>
