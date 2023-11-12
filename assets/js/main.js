@@ -2,14 +2,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     $(function($) {
-
-        // preloader
-        $(".preloader").delay(300).animate({
-            "opacity": "0"
-        }, 500, function() {
-            $(".preloader").css("display", "none");
-        });
-
         // Sticky Header
         var fixed_top = $(".header-section");
         $(window).on("scroll", function() {
@@ -318,3 +310,62 @@ let elements = document.querySelectorAll('.transitionAnim');
 for (let elm of elements) {
 	observer.observe(elm);
 }
+
+/* document.addEventListener("load", function(){ */
+document.addEventListener("DOMContentLoaded", function(){
+	setTimeout(() => {
+		var loader = document.querySelector('.preloader'), loader_blocks = [], column = [], row = [], iterator = 0;
+		document.querySelectorAll('.preloader > div').forEach((el) => {
+			el.querySelectorAll('.preloader-block').forEach((el2) => {
+				row.push(el2);
+				iterator++;
+				if (iterator == 5) {
+					column.push(row);
+					row = [];
+					iterator = 0;
+				}
+			});
+			loader_blocks.push(column);
+			column = [];
+		});
+		loader.classList.add('loaded');
+		setTimeout(() => {
+			for (let step = 4; Math.abs(step) < 5; step--) {
+				let i = 4 - step;
+				setTimeout(() => {
+					if (step >= 0) {
+						for (let step2 = 0; step2 < (5 - Math.abs(step)); step2++) {
+							loader_blocks.forEach((el) => {
+								let trg = el[4 - step2].pop();
+								trg.classList.add('block-animation');
+							});
+						}
+					} else {
+						for (let step2 = (4 - Math.abs(step)); step2 >= 0; step2--) {
+							loader_blocks.forEach((el) => {
+								let trg = el[step2].pop();
+								trg.classList.add('block-animation');
+							});
+						}
+					}
+					i++;
+				}, (i*100));
+			}
+			setTimeout(() => {
+				loader.style.display = 'none';
+			}, 3 * 400);
+		}, 500);
+		/* setTimeout(() => {
+			$(".preloader").animate({
+				"opacity": "0"
+			}, 500, function() {
+				$(".preloader").css("display", "none");
+			});
+		}, 1000); */
+	}, 1500);
+	/* $(".preloader").delay(300).animate({
+		"opacity": "0"
+	}, 500, function() {
+		$(".preloader").css("display", "none");
+	}); */
+});
