@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.min.css">
   </head>
-  <body>
+  <body style="overflow-y:hidden;">
     <div class="preloader">
 	  <div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div></div>
 	  <div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div></div>
@@ -16,7 +16,7 @@
 	  <div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div><div class="preloader-block"></div></div>
       <span class="loader"></span>
     </div>
-    <button class="scrollToTop d-flex d-center" aria-label="scroll Bar Button"><span>Вверх <i class="material-symbols-outlined mat-icon fs-five"> arrow_right_alt </i></span></button>
+    <button class="scrollToTop d-flex d-center" aria-label="scroll Bar Button"><span><i class="material-symbols-outlined mat-icon fs-five"> arrow_forward_ios </i></span></button>
     <div class="mouse-follower">
       <span class="cursor-outline"></span>
       <span class="cursor-dot"></span>
@@ -38,13 +38,13 @@
         <div class="collapse navbar-collapse d-xl-flex d-none gap-10 justify-content-end px-8 pe-2" id="navbar-content" style="flex:1 1 auto;">
           <ul class="navbar-nav gap-3 py-4 py-lg-0 m-auto pe-20 align-self-center">
             <li>
-              <a class="dropdown-nav" href="javascript:void(0)">Home</a>
+              <a class="dropdown-nav" href="javascript:void(0)" data-scrolltarget="home">Home</a>
             </li>
             <li>
-              <a class="dropdown-nav" href="javascript:void(0)">About</a>
+              <a class="dropdown-nav" href="javascript:void(0)" data-scrolltarget="about">About</a>
             </li>
             <li>
-              <a class="dropdown-nav" href="javascript:void(0)">games</a>
+              <a class="dropdown-nav" href="javascript:void(0)" data-scrolltarget="games">Games</a>
             </li>
             <li>
               <a class="dropdown-nav" href="javascript:void(0)">Services</a>
@@ -104,13 +104,13 @@
             <div class="navbar bg-transparent">
               <ul class="navbar-nav d-xl-flex gap-2 gap-md-5 py-4 py-lg-0 px-4 px-lg-0 align-self-center">
                 <li>
-                  <a class="dropdown-item fs-three heading" href="javascript:void(0)">Home</a>
+                  <a class="dropdown-item fs-three heading" href="javascript:void(0)" data-scrolltarget="home">Home</a>
                 </li>
                 <li>
-                  <a class="dropdown-item fs-three heading" href="javascript:void(0)">About</a>
+                  <a class="dropdown-item fs-three heading" href="javascript:void(0)" data-scrolltarget="about">About</a>
                 </li>
                 <li>
-                  <a class="dropdown-item fs-three heading" href="javascript:void(0)">games</a>
+                  <a class="dropdown-item fs-three heading" href="javascript:void(0)" data-scrolltarget="games">games</a>
                 </li>
                 <li>
                   <a class="dropdown-item fs-three heading" href="javascript:void(0)">Services</a>
@@ -130,7 +130,7 @@
         </div>
       </div>
     </div>
-    <section class="banner-section index-one overflow-hidden">
+    <section class="banner-section index-one overflow-hidden" data-menutarget="home">
       <div class="shape-area">
         <img src="assets/images/abs-items/planet.png" class="shape-1" alt="icon">
         <!-- <img src="assets/images/abs-items/console-1.png" class="shape-2" alt="icon"> -->
@@ -233,7 +233,7 @@
       </div>
 	  <div class="top-triangle"></div><div class="bottom-triangle"></div>
 	</section>
-    <section class="about-block pt-120 pb-120">
+    <section class="about-block pt-120 pb-120" data-menutarget="about">
       <div class="container">
         <div class="row justify-content-between align-items-center">
           <div class="col-xxl-6 col-lg-6 order-1 order-lg-0">
@@ -314,7 +314,7 @@
         </div>
       </div>
     </section>
-    <section class="our-games overflow-hidden pt-120 pb-120">
+    <section class="our-games overflow-hidden pt-120 pb-120" data-menutarget="games">
       <div class="container singletab">
         <div class="row justify-content-center">
           <div class="col-12">
@@ -906,7 +906,7 @@
     <footer class="footer-section">
       <div class="container py-5">
         <div class="row social-items p-0 my-1 overflow-hidden">
-          <ul class="d-flex justify-content-around p-0">
+          <ul class="d-flex justify-content-around p-0 transitionAnim rightFade">
             <li class="box-style box-second justify-content-center">
               <a href="https://www.facebook.com" class="d-center gap-2">
 				<i class="fab fa-facebook-f"></i>
@@ -934,7 +934,7 @@
           </ul>
         </div>
         <div class="row justify-content-center overflow-hidden gap-col">
-          <div class="col-lg-6 position-relative p-0 m-0">
+          <div class="col-lg-6 position-relative p-0 m-0 transitionAnim leftFade">
             <div class="box-items d-inline-flex flex-wrap position-absolute">
               <div class="single-item"></div>
               <div class="single-item"></div>
@@ -980,7 +980,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 p-0 m-0">
+          <div class="col-lg-6 p-0 m-0 transitionAnim rightFade">
             <div class="content-right visible-from-bottom pt-120 pb-120 px-5 h-100">
               <div class="main-content">
 				<div class="head-area">
@@ -1008,7 +1008,7 @@
           </div>
         </div>
         <div class="row footer-bottom py-8 my-1">
-          <div class="container">
+          <div class="container transitionAnim leftFade">
             <div class="row justify-content-center">
               <div class="col-md-6 text-center">
                 <div class="copyright">
@@ -1027,7 +1027,7 @@
             <div class="modal fade" id="loginMod">
               <div class="modal-dialog pt-8 pt-sm-0 modal-dialog-centered">
                 <div class="modal-content">
-                  <div class="modal-header border-0 p-0 justify-content-between position-absolute">
+                  <div class="modal-header border-0 p-2 justify-content-end">
                     <button type="button" class="btn-close p-0" data-bs-dismiss="modal" aria-label="Close">
                     <i class="material-symbols-outlined fs-two"> close </i>
                     </button>
@@ -1054,7 +1054,7 @@
 								  <div class="col-sm-12">
 									<div class="single-input text-start">
 									  <label for="contactMessage">Ваше сообщение</label>
-									  <textarea cols="4" rows="4" id="contactMessage" placeholder="Please type your Message here..."></textarea>
+									  <textarea cols="4" rows="4" id="contactMessage" placeholder="Введите ваше сообщение здесь..."></textarea>
 									</div>
 								  </div>
 								  <div class="col-sm-12 mt-4">
@@ -1079,8 +1079,9 @@
     <script src="assets/js/plugins/plugins.js"></script>
     <script src="assets/js/plugins/plugin-custom.js"></script>
     <script src="assets/js/main.js"></script>
-    <!-- <script>
-		scrollAnimationProc();
-	</script> -->
+    <script>
+		scrollAnimationInit();
+		menuScrollInit();
+	</script>
   </body>
 </html>
