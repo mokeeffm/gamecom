@@ -297,75 +297,89 @@ function setMobileMenuHeight() {
 function onEntry(entry) {
 	entry.forEach((change) => {
 		if (change.isIntersecting) {
-			if (change.target.classList.contains('leftFade')) { change.target.classList.remove('leftFade') }
-			else { change.target.classList.remove('rightFade') }
+			change.target.querySelectorAll('.transitionAnim').forEach((el) => {
+				if (el.classList.contains('leftFade')) { el.classList.remove('leftFade') }
+				else if (el.classList.contains('rightFade')) { el.classList.remove('rightFade') }
+				else if (el.classList.contains('topFade')) { el.classList.remove('topFade') }
+			});
 		}
 	});
 }
 
-let options = { threshold: [0.5] };
-let observer = new IntersectionObserver(onEntry, options);
-let elements = document.querySelectorAll('.transitionAnim');
+function scrollAnimationInit() {
+	let options = { threshold: [0.4] },
+		observer = new IntersectionObserver(onEntry, options),
+		elements = document.querySelectorAll('.transitionAnim');
 
-for (let elm of elements) {
-	observer.observe(elm);
+	for (let elm of elements) {
+		observer.observe(elm.parentNode);
+	}
+}
+
+function onScrollEntry(entry) {
+	entry.forEach((change) => {
+		if (change.isIntersecting) {
+			if (change.intersectionRatio >= 0.4 && change.intersectionRatio <= 1) {
+				document.querySelectorAll('[data-scrolltarget].active').forEach((el) => { el.classList.remove('active'); });
+				document.querySelectorAll('[data-scrolltarget="'+change.target.dataset.menutarget+'"]').forEach((el) => { el.classList.add('active'); });
+			}
+		}
+	});
+}
+
+function menuScrollInit() {
+	let options = { threshold: [0.4]},
+		observer = new IntersectionObserver(onScrollEntry, options),
+		elements = document.querySelectorAll('[data-menutarget]');
+
+	for (let elm of elements) {
+		observer.observe(elm);
+	}
 }
 
 /* document.addEventListener("load", function(){ */
 document.addEventListener("DOMContentLoaded", function(){
-	setTimeout(() => {
-		var loader = document.querySelector('.preloader'), loader_blocks = [], column = [], row = [], iterator = 0;
-		document.querySelectorAll('.preloader > div').forEach((el) => {
-			el.querySelectorAll('.preloader-block').forEach((el2) => {
-				row.push(el2);
-				iterator++;
-				if (iterator == 5) {
-					column.push(row);
-					row = [];
-					iterator = 0;
-				}
-			});
-			loader_blocks.push(column);
-			column = [];
-		});
-		loader.classList.add('loaded');
-		setTimeout(() => {
-			for (let step = 4; Math.abs(step) < 5; step--) {
-				let i = 4 - step;
-				setTimeout(() => {
-					if (step >= 0) {
-						for (let step2 = 0; step2 < (5 - Math.abs(step)); step2++) {
-							loader_blocks.forEach((el) => {
-								let trg = el[4 - step2].pop();
-								trg.classList.add('block-animation');
-							});
-						}
-					} else {
-						for (let step2 = (4 - Math.abs(step)); step2 >= 0; step2--) {
-							loader_blocks.forEach((el) => {
-								let trg = el[step2].pop();
-								trg.classList.add('block-animation');
-							});
-						}
-					}
-					i++;
-				}, (i*100));
+	var loader = document.querySelector('.preloader'), loader_blocks = [], column = [], row = [], iterator = 0;
+	document.querySelectorAll('.preloader > div').forEach((el) => {
+		el.querySelectorAll('.preloader-block').forEach((el2) => {
+			row.push(el2);
+			iterator++;
+			if (iterator == 5) {
+				column.push(row);
+				row = [];
+				iterator = 0;
 			}
+		});
+		loader_blocks.push(column);
+		column = [];
+	});
+	loader.classList.add('loaded');
+	setTimeout(() => {
+		let i = 0;
+		for (let step = 4; Math.abs(step) < 5; step--) {
+			i = 4 - step;
 			setTimeout(() => {
-				loader.style.display = 'none';
-			}, 3 * 400);
-		}, 500);
-		/* setTimeout(() => {
-			$(".preloader").animate({
-				"opacity": "0"
-			}, 500, function() {
-				$(".preloader").css("display", "none");
-			});
-		}, 1000); */
-	}, 1500);
-	/* $(".preloader").delay(300).animate({
-		"opacity": "0"
-	}, 500, function() {
-		$(".preloader").css("display", "none");
-	}); */
+				if (step >= 0) {
+					for (let step2 = 0; step2 < (5 - Math.abs(step)); step2++) {
+						loader_blocks.forEach((el) => {
+							let trg = el[4 - step2].pop();
+							trg.classList.add('block-animation');
+						});
+					}
+				} else {
+					for (let step2 = (4 - Math.abs(step)); step2 >= 0; step2--) {
+						loader_blocks.forEach((el) => {
+							let trg = el[step2].pop();
+							trg.classList.add('block-animation');
+						});
+					}
+				}
+				i++;
+			}, (i*100));
+		}
+		setTimeout(() => {
+			loader.style.display = 'none';
+			document.body.style.overflowY = 'auto';
+		}, ((i-1)*100) + 1000);
+	}, 300);
 });
