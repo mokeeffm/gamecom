@@ -137,6 +137,22 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         // services-carousel
+        $(".game-image-carousel").not('.slick-initialized').slick({
+            infinite: true,
+            autoplay: false,
+            centerMode: true,
+            centerPadding: "0",
+            focusOnSelect: false,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            prevArrow: "<button type='button' aria-label='Slide Prev' class='game-image-prev'><i class='material-symbols-outlined mat-icon'  aria-hidden='true'>arrow_forward_ios</i></button>",
+            nextArrow: "<button type='button' aria-label='Slide Next' class='game-image-next'><i class='material-symbols-outlined mat-icon'  aria-hidden='true'>arrow_forward_ios</i></button>",
+            dots: false
+		});
+
+        // services-carousel
         $(".services-carousel").not('.slick-initialized').slick({
             infinite: true,
             autoplay: true,

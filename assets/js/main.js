@@ -319,7 +319,7 @@ function scrollAnimationInit() {
 function onScrollEntry(entry) {
 	entry.forEach((change) => {
 		if (change.isIntersecting) {
-			if (change.intersectionRatio >= 0.4 && change.intersectionRatio <= 1) {
+			if (change.intersectionRatio > 0.50 && change.intersectionRatio <= 1) {
 				document.querySelectorAll('[data-scrolltarget].active').forEach((el) => { el.classList.remove('active'); });
 				document.querySelectorAll('[data-scrolltarget="'+change.target.dataset.menutarget+'"]').forEach((el) => { el.classList.add('active'); });
 			}
@@ -328,7 +328,7 @@ function onScrollEntry(entry) {
 }
 
 function menuScrollInit() {
-	let options = { threshold: [0.4]},
+	let options = { threshold: [0.51]},
 		observer = new IntersectionObserver(onScrollEntry, options),
 		elements = document.querySelectorAll('[data-menutarget]');
 
@@ -383,3 +383,28 @@ document.addEventListener("DOMContentLoaded", function(){
 		}, ((i-1)*100) + 1000);
 	}, 300);
 });
+
+function getScalings() {
+
+}
+
+function hexToRgb(hex_array) {
+    let result = [];
+    hex_array.forEach((hex) => {
+        let color = hex[1];
+        if (color.includes('#')) { color = color.replace('#',''); }
+        let r = parseInt(color.slice(0, 2), 16),
+        g = parseInt(color.slice(2, 4), 16),
+        b = parseInt(color.slice(4, 6), 16);
+        result.push([hex[0], r+','+g+','+b]);
+    });
+    console.log(result);
+}
+
+function rgbToHex(rgb_array) {
+    let result = [];
+    rgb_array.forEach((rgb) => {
+        result.push([rgb[0],(1 << 24 | rgb[1].split(',')[0] << 16 | rgb[1].split(',')[1] << 8 | rgb[1].split(',')[2]).toString(16).slice(1)]);
+    });
+    console.log(result);
+}

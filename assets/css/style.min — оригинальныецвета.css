@@ -176,14 +176,14 @@ a:hover {
 
 .feature-tag {
     position: relative;
-    background-color: var(--s300);
+    background-color: var(--p300);
     color: var(--n800);
     text-transform: uppercase;
     font-weight: 600;
     width: 80px;
     height: 120px;
     top: 0;
-    z-index: 5;
+    z-index: 1;
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 75%, 0 100%);
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 75%, 0 100%)
 }
@@ -273,14 +273,11 @@ a:hover {
     width: initial;
     height: initial;
     font-weight: 600;
-    border-radius: 16px;
-    border: 1px solid var(--s500);
-    color: var(--s500)
+    border-radius: 16px
 }
 
-.box-style.btn-box:hover,
-.box-style.btn-box-third:hover {
-    color: var(--s50)
+.box-style.btn-box:hover {
+    color: var(--n0)
 }
 
 .box-style.btn-box:hover:before {
@@ -315,7 +312,6 @@ a:hover {
     color: var(--n0)
 }
 
-.box-style.btn-box:hover,
 .box-style.btn-box-third:hover {
     border-color: rgba(0, 0, 0, 0)
 }
@@ -1538,7 +1534,7 @@ li {
 	}
 	100% {
 		background: var(--p500);
-		opacity: .5;
+		opacity: .25;
 	}
 }
 
@@ -2218,7 +2214,7 @@ li {
     width: 395px;
     height: 160%;
     bottom: 0;
-    background: var(--p300);
+    background: var(--p500);
     transform: skew(-17deg);
     z-index: -1
 }
@@ -2865,7 +2861,7 @@ li {
 }
 
 .our-games .feature-tag {
-    right: 50px
+    right: 30px
 }
 
 .our-games .feature-tag.start {
@@ -3067,8 +3063,7 @@ li {
     width: 80px;
     height: 80px;
     border-radius: 100%;
-    background-color: var(--p400);
-    border: 1px solid var(--n0)
+    background-color: var(--p500)
 }
 
 .our-services .icon-box i {
@@ -5683,8 +5678,8 @@ li {
         display: none
     }
     .feature-tag {
-        width: 55;
-        height: 75px;
+        width: 60px;
+        height: 85px;
         font-size: 12px
     }
     .our-games.all-games .col-8 {
@@ -5729,6 +5724,8 @@ li {
         height: 80px
     }
 }
+
+/*# sourceMappingURL=style.min.css.map */
 
 .our-services .slick-track,
 .our-services .slick-track .slide-area {
@@ -5782,40 +5779,15 @@ header.header-section:not(.header-fixed) ~ section.banner-section .bottom-triang
 
 div.box-items > div.single-item{
 	animation: colorBoxChange 4s linear infinite alternate;
-	-webkit-animation: colorBoxChange 4s linear infinite alternate;
 }
-div.box-items > div.single-item:nth-child(7n - 7){ 
-    animation-delay: 2s;
-    -webkit-animation-delay: 2s;
-}
-div.box-items > div.single-item:nth-child(7n - 6){ 
-    animation-delay: 6s;
-    -webkit-animation-delay: 6s;
-}
-div.box-items > div.single-item:nth-child(7n - 5){ 
-    animation-delay: 1s;
-    -webkit-animation-delay: 1s;
-}
-div.box-items > div.single-item:nth-child(7n - 4){ 
-    animation-delay: 5s;
-    -webkit-animation-delay: 5s;
-}
-div.box-items > div.single-item:nth-child(7n - 3){ 
-    animation-delay: 3s;
-    -webkit-animation-delay: 3s;
-}
-div.box-items > div.single-item:nth-child(7n - 2){ 
-    animation-delay: 7s;
-    -webkit-animation-delay: 7s;
-}
-div.box-items > div.single-item:nth-child(7n - 1){ 
-    animation-delay: 4s;
-    -webkit-animation-delay: 4s;
-}
-div.box-items > div.single-item:nth-child(7n){ 
-    animation-delay: 0s;
-    -webkit-animation-delay: 0s;
-}
+div.box-items > div.single-item:nth-child(7n - 7){ animation-delay: 2s; }
+div.box-items > div.single-item:nth-child(7n - 6){ animation-delay: 6s; }
+div.box-items > div.single-item:nth-child(7n - 5){ animation-delay: 1s; }
+div.box-items > div.single-item:nth-child(7n - 4){ animation-delay: 5s; }
+div.box-items > div.single-item:nth-child(7n - 3){ animation-delay: 3s; }
+div.box-items > div.single-item:nth-child(7n - 2){ animation-delay: 7s; }
+div.box-items > div.single-item:nth-child(7n - 1){ animation-delay: 4s; }
+div.box-items > div.single-item:nth-child(7n){ animation-delay: 0s; }
 
 .transitionAnim {
 	opacity: 1;
@@ -5876,7 +5848,7 @@ body > section {
 .game-image-carousel .game-image-next{
 	position: absolute;
 	transition: all 0.75s;
-	background: rgba(255, 255, 255, 0.15);
+	background: rgba(0, 0, 0, 0.15);
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 	height: 100%;
@@ -5915,8 +5887,4 @@ body > section {
 	border: none;
     box-shadow: none;
 	color: var(--p300);
-}
-
-.add-color-text{
-    color: var(--s300) !important;
 }
